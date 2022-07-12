@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React-project</title>
+</head>
+<body>
+    <div id="root"></div>
+
+<!-- import -->
+<!-- React JS : 어플리케이션이 interactive 하도록 만들어주는 library -->
+<!-- <script src="https://unpkg.com/react@17/umd/react.development.js"></script> -->
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<!-- ReactDOM : react element들을 html body에 둘 수 있도록 해주는 library -->
+<!-- <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+<script type="text/babel">
+    const root = document.getElementById("root");
+    // JSX 방식
+    // 함수로 만들 떄
+    // function 변수명(){return();}
+    // const 변수명 = () => ();
+    // 둘 다 같다.
+    function Title() {
+        return (
+            <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>Hello I'm span</h3>
+        );
+    }
+    const Button = () => (
+        <button style={{ backgroundColor: "pink" }} onClick={() => console.log('im clicked')}>Click me</button>
+    );
+    
+    const Container = () => (
+        /*컴포넌트의 첫 글자는 반드시 대문자여야 한다
+        소문자라면 React는 html태그로 인식할 것이다 */
+        <div>
+            <Title />
+            <Button />
+        </div>
+    );
+    ReactDOM.render(<Container />, root);
+</script> 
+</html>
+
+
+
+
+

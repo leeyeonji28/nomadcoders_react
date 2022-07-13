@@ -19,11 +19,15 @@
 
 <script type="text/babel">
     const root = document.getElementById("root");
+    let counter = 0;
+    function countUp(){
+        counter += 1;
+    }
     
     const Container = () => (
         <div>
-            <h3>Total clciks : 0</h3>
-            <button>Click me</button>
+            <h3>Total clciks : {counter}</h3>
+            <button onClick={countUp}>Click me</button>
         </div>
     );
     ReactDOM.render(<Container />, root);

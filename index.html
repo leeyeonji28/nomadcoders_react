@@ -20,14 +20,19 @@
 <script type="text/babel">
     const root = document.getElementById("root");
     
-    const App = () => (
-        <div>
-            <h3>Total clciks : 0</h3>
-            <button>Click me</button>
-        </div>
-    );
+    function App(){
+        const [counter, modifier] = React.useState(); // 배열이 나옴, 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
+        
+        return(
+            <div>
+                <h3>Total clciks : 0</h3>
+                <button>Click me</button>
+            </div>
+        );
+    
+    };
 
-    ReactDOM.render(<Container />, root);
+    ReactDOM.render(<App />, root);
 </script> 
 </html>
 

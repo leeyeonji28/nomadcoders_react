@@ -19,26 +19,11 @@
 
 <script type="text/babel">
     const root = document.getElementById("root");
-    // JSX 방식
-    // 함수로 만들 떄
-    // function 변수명(){return();}
-    // const 변수명 = () => ();
-    // 둘 다 같다.
-    function Title() {
-        return (
-            <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>Hello I'm span</h3>
-        );
-    }
-    const Button = () => (
-        <button style={{ backgroundColor: "pink" }} onClick={() => console.log('im clicked')}>Click me</button>
-    );
     
     const Container = () => (
-        /*컴포넌트의 첫 글자는 반드시 대문자여야 한다
-        소문자라면 React는 html태그로 인식할 것이다 */
         <div>
-            <Title />
-            <Button />
+            <h3>Total clciks : 0</h3>
+            <button>Click me</button>
         </div>
     );
     ReactDOM.render(<Container />, root);

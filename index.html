@@ -20,18 +20,21 @@
 <script type="text/babel">
     const root = document.getElementById("root");
     let counter = 0;
-    function countUp(){
+    function countUp(){ // 실행순서 4 // 실행순서 7
         counter += 1;
-        ReactDOM.render(<Container />, root); // 추가해서 countUp이 호출될때마다 리렌더링 해줌, 리렌더링을 하면 Container이 재실행 됨
+        render();
+    }
+    function render(){ // 실행순서 2 // 실행순서 5 // 실행순서 8
+        ReactDOM.render(<Container />, root);
     }
     
-    const Container = () => (
+    const Container = () => ( // 실행순서 3 // 실행순서 6 // 실행순서 9
         <div>
             <h3>Total clciks : {counter}</h3>
             <button onClick={countUp}>Click me</button>
         </div>
     );
-    ReactDOM.render(<Container />, root); // 로드 시 바로 실행 됨 (counter == 0), 리렌더링을 하지 않아 숫자가 바뀌지 않음
+    render(); // 실행순서 1
 </script> 
 </html>
 

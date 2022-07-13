@@ -22,6 +22,7 @@
     let counter = 0;
     function countUp(){
         counter += 1;
+        ReactDOM.render(<Container />, root); // 추가해서 countUp이 호출될때마다 리렌더링 해줌, 리렌더링을 하면 Container이 재실행 됨
     }
     
     const Container = () => (
@@ -30,7 +31,7 @@
             <button onClick={countUp}>Click me</button>
         </div>
     );
-    ReactDOM.render(<Container />, root);
+    ReactDOM.render(<Container />, root); // 로드 시 바로 실행 됨 (counter == 0), 리렌더링을 하지 않아 숫자가 바뀌지 않음
 </script> 
 </html>
 

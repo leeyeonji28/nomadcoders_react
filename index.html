@@ -21,9 +21,9 @@
     const root = document.getElementById("root");
     
     function App(){
-        const [counter, modifier] = React.useState(0); // 배열이 나옴, 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
+        const [counter, setCounter] = React.useState(0); // 배열이 나옴, 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
         const onClick = () => {
-            modifier(121241);
+            setCounter(counter + 1);
         };
 
         return(

@@ -19,22 +19,15 @@
 
 <script type="text/babel">
     const root = document.getElementById("root");
-    let counter = 0;
-    function countUp(){ // 실행순서 4 // 실행순서 7
-        counter += 1;
-        render();
-    }
-    function render(){ // 실행순서 2 // 실행순서 5 // 실행순서 8
-        ReactDOM.render(<Container />, root);
-    }
     
-    const Container = () => ( // 실행순서 3 // 실행순서 6 // 실행순서 9
+    const App = () => (
         <div>
-            <h3>Total clciks : {counter}</h3>
-            <button onClick={countUp}>Click me</button>
+            <h3>Total clciks : 0</h3>
+            <button>Click me</button>
         </div>
     );
-    render(); // 실행순서 1
+
+    ReactDOM.render(<Container />, root);
 </script> 
 </html>
 

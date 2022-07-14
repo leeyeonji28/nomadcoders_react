@@ -45,7 +45,13 @@
                 
                 <div>
                     <label htmlFor="hours">Hours</label>
-                    <input value={minutes/60} id="hours" placeholder="Hours" type="number" />    
+                    <input
+                        value={minutes/60}
+                        id="hours"
+                        placeholder="Hours"
+                        type="number"
+                        disabled
+                    />    
                 </div>
                 
                 <button onClick={reset}>Reset</button>

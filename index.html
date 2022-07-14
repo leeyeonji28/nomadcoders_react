@@ -25,6 +25,9 @@
         const onChange = (event) => {
             setMinutes(event.target.value);
         };
+        const reset = () => {
+            setMinutes(0);
+        }
 
         return( //Minutes에 분을 쓰면 시간 단위가 갱신, Hours에 시간을 쓰면 분 단위가 갱신
             <div>
@@ -44,6 +47,8 @@
                     <label htmlFor="hours">Hours</label>
                     <input value={minutes/60} id="hours" placeholder="Hours" type="number" />    
                 </div>
+                
+                <button onClick={reset}>Reset</button>
             </div>
         );
     

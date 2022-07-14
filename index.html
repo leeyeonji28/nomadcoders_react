@@ -22,8 +22,8 @@
     
     function App(){
         const [minutes, setMinutes] = React.useState(); //state만들어줌. [현재값, 현재값을 수정해주는 함수]
-        const onChange = () => {
-            console.log("somebody wrote");
+        const onChange = (event) => {
+            setMinutes(event.target.value);
         };
 
         return( //Minutes에 분을 쓰면 시간 단위가 갱신, Hours에 시간을 쓰면 분 단위가 갱신
@@ -37,6 +37,7 @@
                  type="number"
                  onChange={onChange}
                 /> 
+                <h4>You want to convert {minutes}</h4>
                 <label htmlFor="hours">Hours</label>
                 <input id="hours" placeholder="Hours" type="number"/>
             </div>

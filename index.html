@@ -23,7 +23,8 @@
     function App(){
         const [counter, setCounter] = React.useState(0); // 배열이 나옴, 첫번째 값은 초기값, 두번째 값은 그 값을 바꾸는 함수
         const onClick = () => {
-            setCounter(counter + 1);
+            // setCounter(counter + 1); // counter state를 통해 새로운 counter state를 계산, 다른곳에서 변결될 수 있어서 좋은 방법이 아님
+            setCounter(current => current+1);  // current == 현재값, 현재 state를 기반으로 계산하고 싶을 때 사용! 위쪽이랑 같은 값을 계산, 하지만 더 안전함
         };
 
         return(

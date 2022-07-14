@@ -21,9 +21,15 @@
     const root = document.getElementById("root");
     
     function App(){
-        return(
+        const [minutes, setMinutes] = React.useState(); //state만들어줌. [현재값, 현재값을 수정해주는 함수]
+
+        return( //Minutes에 분을 쓰면 시간 단위가 갱신, Hours에 시간을 쓰면 분 단위가 갱신
             <div>
                 <h1>Super converter</h1>
+                <label htmlFor="minutes">Minutes</label>
+                <input value={minutes} id="minutes" placeholder="Minutes" type="number"/> 
+                <label htmlFor="hours">Hours</label>
+                <input id="hours" placeholder="Hours" type="number"/>
             </div>
         );
     
